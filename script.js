@@ -13,28 +13,3 @@ function showReport() {
     }
     return false;
 }
-
-function addUser() {
-    var newUsername = document.getElementById('newUsername').value;
-    var newPassword = document.getElementById('newPassword').value;
-
-    var table = document.getElementById('userTable').getElementsByTagName('tbody')[0];
-    var newRow = table.insertRow();
-    var cell1 = newRow.insertCell(0);
-    var cell2 = newRow.insertCell(1);
-    var cell3 = newRow.insertCell(2);
-
-    cell1.innerHTML = newUsername;
-    cell2.innerHTML = newPassword;
-    cell3.innerHTML = '<button onclick="removeUser(this)">Remove</button>';
-
-    document.getElementById('newUsername').value = '';
-    document.getElementById('newPassword').value = '';
-
-    return false; // Prevent form submission
-}
-
-function removeUser(button) {
-    var row = button.parentNode.parentNode;
-    row.parentNode.removeChild(row);
-}
