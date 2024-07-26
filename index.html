@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .login-form {
+            background-color: #001871;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-form h2 {
+            margin-top: 0;
+        }
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .login-form input[type="submit"] {
+            background-color: #009CDE;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-form input[type="submit"]:hover {
+            background-color: #007bb5;
+        }
+        .iframe-container {
+            margin-top: 20px;
+            display: none;
+        }
+        .disclaimer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #555;
+        }
+    </style>
+    <script>
+        function showReport() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            // Simple validation for demonstration purposes
+            if (username === 'admin' && password === 'password') {
+                document.querySelector('.iframe-container').style.display = 'block';
+                document.querySelector('.login-form').style.display = 'none';
+            } else {
+                alert('Invalid login credentials');
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form onsubmit="return showReport()">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+        <div class="iframe-container">
+            <iframe title="Call Centre" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=bbb6b691-5f9d-40b4-bdb9-04a4d371a3b4&autoAuth=true&ctid=6223c14b-e70c-4a10-8e1e-6a54d3a8de15" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+        <div class="disclaimer">
+            <p>Disclaimer: This website contains confidential information. Unauthorized access or disclosure is prohibited.</p>
+        </div>
+    </div>
+</body>
+</html>
