@@ -1,26 +1,40 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const fetch = require('node-fetch');
+function showReport() {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
 
-const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.post('/login', async (req, res) => {
-    const { username, password } = req.body;
-    try {
-        const response = await fetch('https://raw.githubusercontent.com/EdLetshuma/Website-Power-Bi/master/credentials.json');
-        const credentials = await response.json();
-        const user = credentials.find(user => user.username === username && user.password === password);
-        if (user) {
-            res.send('Login successful');
-        } else {
-            res.send('Invalid login credentials');
-        }
-    } catch (error) {
-        res.status(500).send('Error fetching credentials');
+    // Simple validation for demonstration purposes
+    if ((username === 'admin' && password === 'password') ||
+        (username === 'user1' && password === 'pass123') ||
+        (username === 'user2' && password === 'mypassword')) {
+        document.querySelector('.iframe-container').style.display = 'block';
+        document.querySelector('.login-form').style.display = 'none';
+    } else {
+        alert('Invalid login credentials');
     }
-});
+    return false;
+}
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
-});
+function addUser() {
+    var newUsername = document.getElementById('newUsername').value;
+    var newPassword = document.getElementById('newPassword').value;
+
+    var table = document.getElementById('userTable').getElementsByTagName('tbody')[0];
+    var newRow = table.insertRow();
+    var cell1 = newRow.insertCell(0);
+    var cell2 = newRow.insertCell(1);
+    var cell3 = newRow.insertCell(2);
+
+    cell1.innerHTML = newUsername;
+    cell2.innerHTML = newPassword;
+    cell3.innerHTML = '<button onclick="removeUser(this)">Remove</button>';
+
+    document.getElementById('newUsername').value = '';
+    document.getElementById('newPassword').value = '';
+
+    return false; // Prevent form submission
+}
+
+function removeUser(button) {
+    var row = button.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+}
