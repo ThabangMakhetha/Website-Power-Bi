@@ -4,12 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Login Page</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
         <img src="https://www.bing.com/images/blob?bcid=RCM-.TvTaU8HuhcxoNWLuD9SqbotqVT.PZo" alt="Mmela Financial Services Logo" class="logo">
+=======
+    <style>
+        /* CSS code */
+    </style>
+    <script>
+        function showReport() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            // Simple validation for demonstration purposes
+            if (username === 'admin' && password === 'password') {
+                document.querySelector('.iframe-container').style.display = 'block';
+                document.querySelector('.login-form').style.display = 'none';
+            } else {
+                alert('Invalid login credentials');
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="![Mmela Financial Services Logo](https://www.bing.com/images/blob?bcid=RCM-.TvTaU8HuhcxoNWLuD9SqbotqVT.PZo)" alt="Mmela Financial Services Logo" style="width: 200px; height: auto;">
+>>>>>>> c9cea040719fc056a2b683e687df4f82969b3cf4
         <div class="login-form">
             <h2>Login</h2>
             <form onsubmit="return showReport()">
