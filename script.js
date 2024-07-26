@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
     try {
-        const response = await fetch('https://github.com/EdLetshuma/Website-Power-Bi/blob/9f75e43943d356ae743f3ba647f51c960121e55e/credentials.json');
+        const response = await fetch('https://raw.githubusercontent.com/EdLetshuma/Website-Power-Bi/9f75e43943d356ae743f3ba647f51c960121e55e/credentials.json');
         const credentials = await response.json();
         const user = credentials.find(user => user.username === username && user.password === password);
         if (user) {
