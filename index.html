@@ -12,7 +12,7 @@
         <img src="https://mmela.net/wp-content/uploads/2023/08/Mmela-Logo-Transparent-768x383.png" class="logo">
         <div class="login-form">
             <h2>Login</h2>
-            <form onsubmit="return showReport()">
+            <form action="/login" method="post" onsubmit="return showReport()">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
                 <label for="password">Password:</label>
@@ -21,7 +21,7 @@
             </form>
             <button onclick="showReport()">Sales Report</button>
         </div>
-        <div class="iframe-container">
+        <div class="iframe-container" style="display:none;">
             <iframe title="Call Centre" width="1024" height="612" src="https://app.powerbi.com/view?r=eyJrIjoiMGFiMTcwMGEtYzg2MC00MjdlLWE2NzQtZWFjNTlhMTRjZWJiIiwidCI6IjYyMjNjMTRiLWU3MGMtNGExMC04ZTFlLTZhNTRkM2E4ZGUxNSJ9" frameborder="0" allowFullScreen="true"></iframe>
         </div>
         <div class="disclaimer">
