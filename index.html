@@ -12,7 +12,7 @@
         <img src="https://mmela.net/wp-content/uploads/2023/08/Mmela-Logo-Transparent-768x383.png" class="logo">
         <div class="login-form">
             <h2>Login</h2>
-            <form action="/login" method="post" onsubmit="return showReport()">
+            <form onsubmit="return showReport()">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
                 <label for="password">Password:</label>
@@ -26,6 +26,42 @@
         </div>
         <div class="disclaimer">
             <p>Disclaimer: This website contains confidential information owned by Mmela Financial Services. Unauthorized access or disclosure is prohibited.</p>
+        </div>
+        <div class="user-management">
+            <h2>Manage Users</h2>
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>admin</td>
+                        <td>password</td>
+                        <td><button onclick="removeUser(this)">Remove</button></td>
+                    </tr>
+                    <tr>
+                        <td>user1</td>
+                        <td>pass123</td>
+                        <td><button onclick="removeUser(this)">Remove</button></td>
+                    </tr>
+                    <tr>
+                        <td>user2</td>
+                        <td>mypassword</td>
+                        <td><button onclick="removeUser(this)">Remove</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <form onsubmit="return addUser()">
+                <label for="newUsername">New Username:</label>
+                <input type="text" id="newUsername" required>
+                <label for="newPassword">New Password:</label>
+                <input type="password" id="newPassword" required>
+                <input type="submit" value="Add User">
+            </form>
         </div>
     </div>
 </body>
