@@ -5,56 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Login Page</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .login-form {
-            background-color: #001871;
-            color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .login-form h2 {
-            margin-top: 0;
-        }
-        .login-form input[type="text"],
-        .login-form input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-        }
-        .login-form input[type="submit"] {
-            background-color: #009CDE;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .login-form input[type="submit"]:hover {
-            background-color: #007bb5;
-        }
-        .iframe-container {
-            margin-top: 20px;
-            display: none;
-        }
-        .disclaimer {
-            margin-top: 20px;
-            font-size: 12px;
-            color: #555;
-        }
+        /* CSS code */
     </style>
     <script>
         function showReport() {
@@ -73,6 +24,7 @@
 </head>
 <body>
     <div class="container">
+        <img src="![Mmela Financial Services Logo](https://www.bing.com/images/blob?bcid=RCM-.TvTaU8HuhcxoNWLuD9SqbotqVT.PZo)" alt="Mmela Financial Services Logo" style="width: 200px; height: auto;">
         <div class="login-form">
             <h2>Login</h2>
             <form onsubmit="return showReport()">
@@ -82,12 +34,13 @@
                 <input type="password" id="password" name="password" required>
                 <input type="submit" value="Login">
             </form>
+            <button onclick="showReport()">Sales Report</button>
         </div>
         <div class="iframe-container">
-            <iframe title="Call Centre" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=bbb6b691-5f9d-40b4-bdb9-04a4d371a3b4&autoAuth=true&ctid=6223c14b-e70c-4a10-8e1e-6a54d3a8de15" frameborder="0" allowFullScreen="true"></iframe>
+            <iframe title="Call Centre" width="800" height="486" src="https://app.powerbi.com/view?r=eyJrIjoiMGFiMTcwMGEtYzg2MC00MjdlLWE2NzQtZWFjNTlhMTRjZWJiIiwidCI6IjYyMjNjMTRiLWU3MGMtNGExMC04ZTFlLTZhNTRkM2E4ZGUxNSJ9" frameborder="0" allowFullScreen="true"></iframe>
         </div>
         <div class="disclaimer">
-            <p>Disclaimer: This website contains confidential information. Unauthorized access or disclosure is prohibited.</p>
+            <p>Disclaimer: This website contains confidential information owned by Mmela Financial Services. Unauthorized access or disclosure is prohibited.</p>
         </div>
     </div>
 </body>
